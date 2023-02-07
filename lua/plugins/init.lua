@@ -2,6 +2,7 @@ local plugins = {
 	--lsp stuff
 	{
 		"neovim/nvim-lspconfig",
+		lazy = false,
 		config = function()
 			require("plugins.configs.lsp")
 		end,
@@ -9,6 +10,7 @@ local plugins = {
 
 	{
 		"williamboman/mason.nvim",
+		lazy = false,
 		config = function()
 			require("plugins.configs.mason")
 		end,
@@ -40,6 +42,15 @@ local plugins = {
 				"hrsh7th/cmp-path",
 			},
 		},
+	},
+
+	--Treesitter
+	{
+		"nvim-treesitter/nvim-treesitter",
+		lazy = false,
+		config = function ()
+			require("plugins.configs.treesitter")
+		end,
 	},
 
 	--Files support
