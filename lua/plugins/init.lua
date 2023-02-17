@@ -2,7 +2,6 @@ local plugins = {
 	--lsp stuff
 	{
 		"neovim/nvim-lspconfig",
-		lazy = false,
 		config = function()
 			require("plugins.configs.lsp")
 		end,
@@ -10,7 +9,6 @@ local plugins = {
 
 	{
 		"williamboman/mason.nvim",
-		lazy = false,
 		config = function()
 			require("plugins.configs.mason")
 		end,
@@ -31,6 +29,9 @@ local plugins = {
 			--Autopairs
 			{
 				"windwp/nvim-autopairs",
+				config = function ()
+					require("plugins.configs.other").autopairs()
+				end,
 			},
 
 			--cmp sources
@@ -47,7 +48,6 @@ local plugins = {
 	--Treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
-		lazy = false,
 		config = function ()
 			require("plugins.configs.treesitter")
 		end,
@@ -67,7 +67,6 @@ local plugins = {
 	{
 		"catppuccin/nvim",
 		name =  "catppuccin",
-		lazy = false,
 		priority = 1000,
 		config = function ()
 			vim.cmd.colorscheme "catppuccin"
