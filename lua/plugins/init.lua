@@ -61,6 +61,18 @@ local plugins = {
 				"nvim-tree/nvim-web-devicons",
 			},
 		},
+		config = function ()
+			require("nvim-tree").setup()
+		end,
+	},
+
+	--Bufferline /Tabbline 
+	{
+		'akinsho/bufferline.nvim',
+		version = "v3.*",
+		config = function ()
+			require("plugins.configs.other").bufferline()
+		end
 	},
 
 	--Colourscheme
